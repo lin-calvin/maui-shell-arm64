@@ -77,7 +77,7 @@ CMakeLists.txt.user*
 
 # Exclude particular file
 !install-build-deps.sh
-!build-appimage-amd64.yml
+!build-appimage-arm64.yml
 
 # Appimage build folders & appimage
 AppDir
