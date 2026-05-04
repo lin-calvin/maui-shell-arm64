@@ -27,14 +27,14 @@ AppDir:
     exec_args: $@
   runtime:
     env:
-      PATH: '${APPDIR}/usr/bin:${APPDIR}/bin:${APPDIR}/usr/lib/x86_64-linux-gnu/libexec/kf5:${PATH}'
+      PATH: '${APPDIR}/usr/bin:${APPDIR}/bin:${APPDIR}/usr/lib/aarch64-linux-gnu/libexec/kf5:${PATH}'
       QT_QUICK_CONTROLS_STYLE: "maui-style"
   after_bundle:
     - ln -svf $APPDIR/bin/bash $APPDIR/bin/sh
-    # - cp -n $APPDIR/opt/libc/lib/x86_64-linux-gnu/libnsl* $APPDIR/lib/x86_64-linux-gnu/
+    # - cp -n $APPDIR/opt/libc/lib/aarch64-linux-gnu/libnsl* $APPDIR/lib/aarch64-linux-gnu/
   apt:
     arch:
-    - amd64
+    - arm64
     allow_unauthenticated: true
     sources:
     - sourceline: deb http://archive.ubuntu.com/ubuntu/ jammy main restricted universe multiverse
@@ -131,6 +131,6 @@ AppDir:
     - usr/share/locale
 
 AppImage:
-  arch: x86_64
+  arch: aarch64
   comp: xz
   update-information: guess

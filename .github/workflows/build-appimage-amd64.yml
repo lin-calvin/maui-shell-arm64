@@ -1,4 +1,4 @@
-name: Maui Shell AppImage
+name: Maui Shell AppImage (arm64)
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 jobs:
   build-appimage:
 
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04-arm
 
     container:
       image: ubuntu:jammy
@@ -36,7 +36,7 @@ jobs:
       
       - name: Install appimagetool
         run: |
-          wget -qc https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage -O /opt/appimagetool
+          wget -qc https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-aarch64.AppImage -O /opt/appimagetool
           cd /opt/ && \
           chmod +x appimagetool && \
           sed -i 's|AI\x02|\x00\x00\x00|' appimagetool && \
